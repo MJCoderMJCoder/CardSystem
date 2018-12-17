@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="po">
+	<class name="Card" table="card_table">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="number" column="number"></property>
+		<property name="money" column="money"></property>
+		<property name="islock" column="islock"></property>
+		<property name="password" column="password"></property>
+		<property name="name" column="name"></property>
+		<property name="sex" column="sex"></property>
+		<property name="identity" column="identity"></property>
+		<property name="phone" column="phone"></property>
+		<property name="college" column="college"></property>
+	</class>
+</hibernate-mapping>

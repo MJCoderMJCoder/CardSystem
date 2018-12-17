@@ -1,0 +1,8 @@
+/action/
+/applicationContext.xml
+/dao/
+/exception/
+/po/
+/service/
+/struts.xml
+/util/

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="po">
+	<class name="History" table="history_table">
+		<id name="id" column="id">
+			<generator class="identity"></generator>
+		</id>
+		<property name="number" column="number"></property>
+		<property name="money" column="money"></property>
+		<property name="operation" column="operation"></property>
+		<property name="date" column="date"></property>
+	</class>
+</hibernate-mapping>

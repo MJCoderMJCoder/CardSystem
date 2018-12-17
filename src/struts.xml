@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.1.7.dtd">
+<struts>
+	<constant name="struts.il8n.encoding" value="utf-8"></constant>
+	<package name="action" extends="struts-default">
+	
+	<!-- 管理员ACTION -->
+		<action name="adminLogin" class="action.admin.AdminLoginAction">
+			<result name="input">/index.jsp</result>
+			<result name="success">/admin/adminIndex.jsp</result>
+		</action>
+		<action name="createCard" class="action.admin.CreateCardAction">
+			<result name="input">/admin/createCard.jsp</result>
+		</action>
+		<action name="recharge" class="action.admin.RechargeAction">
+			<result name="input">/admin/recharge.jsp</result>
+		</action>
+		<action name="adminCardInfo" class="action.admin.CardInfoAction">
+			<result name="input">/admin/cardInfo.jsp</result>
+			<result name="success">/admin/cardInfoResult.jsp</result>
+		</action>
+		<action name="adminHistory" class="action.admin.AdminHistoryAction">
+			<result name="input">/admin/history.jsp</result>
+			<result name="success">/admin/historyResult.jsp</result>
+		</action>
+		<action name="lock" class="action.admin.LockAction">
+			<result name="input">/admin/lockCard.jsp</result>
+			<result name="lockSuccess">/admin/lockConfirm.jsp</result>
+		</action>
+		<action name="unlock" class="action.admin.LockAction" method="unlock">
+			<result name="input">/admin/lockCard.jsp</result>
+			<result name="unlockSuccess">/admin/unlockConfirm.jsp</result>
+		</action>
+		<action name="lockConfirm" class="action.admin.LockConfirmAction">
+			<result name="success">/admin/lockCard.jsp</result>
+		</action>
+		<action name="unlockConfirm" class="action.admin.UnlockConfirmAction">
+			<result name="success">/admin/lockCard.jsp</result>
+		</action>
+		<action name="deleteCard" class="action.admin.DeleteCardAction">
+			<result name="input">/admin/deleteCard.jsp</result>
+			<result name="success">/admin/deleteConfirm.jsp</result>
+		</action>
+		<action name="deleteConfirm" class="action.admin.DeleteConfirmAction">
+			<result name="success">/admin/deleteCard.jsp</result>
+		</action>
+		<action name="showCardList" class="action.admin.ShowCardListAction">
+			<result name="success">/admin/showCardList.jsp</result>
+		</action>
+		
+		<!-- 学生ACTION -->
+		<action name="studentLogin" class="action.student.StudentLoginAction">
+			<result name="input">/index.jsp</result>
+			<result name="success">/student/studentIndex.jsp</result>
+		</action>
+		<action name="changePassword" class="action.student.ChangePasswordAction">
+			<result name="input">/student/changePassword.jsp</result>
+		</action>
+		<action name="cardInfo" class="action.student.CardInfoAction">
+			<result name="success">/student/cardInfo.jsp</result>
+		</action>
+		<action name="history" class="action.student.HistoryAction">
+			<result name="success">/student/history.jsp</result>
+		</action>
+		<action name="changeInfo" class="action.student.ChangeInfoAction">
+			<result name="success">/student/changeInfo.jsp</result>
+		</action>
+		<action name="studentLockCardConfirm" class="action.student.StudentLockCardConfirmAction">
+			<result name="success">/student/blank.jsp</result>
+		</action>
+		
+		<!-- 刷卡ACTION -->
+		<action name="consume" class="action.machine.ConsumeAction">
+			<result name="input">/machine/machineIndex.jsp</result>
+		</action>
+		
+		<!-- 验证码 -->
+		<action name="randPic" class="util.RandomAction">         
+          <result type="stream">         
+            <param name="contentType">image/jpeg</param>         
+            <param name="inputName">inputStream</param>         
+          </result>    
+        </action>
+	</package>
+</struts>
